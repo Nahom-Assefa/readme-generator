@@ -1,23 +1,8 @@
 // TODO: Include packages needed for this application
-const fs = require('../fs/promises');
 const inquirer = require("inquirer");
-const {generateMarkdown, writeToFile} = require('./utils/generateMarkdown');
+const fs = require('fs');
+const {generateMarkdown, writeFile} = require('./utils/generateMarkdown');
 
-
-// const writeToFile = (questionContent) => {
-//     return new Promise((resolve, reject) => {
-//     const writtenFile = fs.writeFile("./develop/dist/README.md", questionContent, (err) => {
-//         if (err) {
-//           reject(err);
-//           return;
-//         }
-//         resolve({
-//           ok: true,
-//           message: "File created!"
-//         });
-//       });
-//     });
-//   };
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -25,7 +10,7 @@ const questions = [
   "What is your project description",
   "What is your email",
   "Would you like to include a screenshot",
-  "Please provide the relative path for screenshot using (![](<Relative Path>)",
+  "Please provide the relative path for screenshot using (![](<Relative Path>))",
   "Would you like other developers to contribute to this project",
   "Provide guidelines for how to contribute",
   "Please choose a license from the available options",
@@ -34,6 +19,7 @@ const questions = [
   "Are there any installation specifications to highlight",
   "Describe the installation process",
   "Please provide a table of contents (check all that apply)",
+  "What is the name to your github repository?",
   "What is the link to your github repository?"
 ];
 
@@ -169,8 +155,13 @@ function init() {
     },
     {
         type: "input",
-        name: "link",
+        name: "github",
         message: questions[13],
+    },
+    {
+        type: "input",
+        name: "link",
+        message: questions[14],
     }
   ]);
 }
@@ -178,13 +169,10 @@ function init() {
 // Function call to initialize app
 init()
   .then(questionData => {
-    const markdown = generateMarkdown(questionData);
-    console.log('line 181', markdown);
+    return generateMarkdown(questionData);
   })
   .then(fileResponse => {
-    console.log('fileresponse', fileResponse)
-    writeToFile('README.md', fileResponse);
-      
+    return writeFile(fileResponse)
   })
   .catch((err) => {
     console.log(err);
