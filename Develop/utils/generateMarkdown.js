@@ -30,6 +30,8 @@ function installations(installation) {
 function generateMarkdown(data) {
   return `# ${data.title}
 
+  ![badge](https://img.shields.io/badge/license-${data.license}-green);
+
   ## Description
    ${data.description}
 
@@ -48,7 +50,7 @@ function generateMarkdown(data) {
 
 
   ## Additional Information 
-  *This project is licensed under the ${data.license} license.*
+  *This project is licensed under the ${data.license} license. https://choosealicense.com/licenses/${data.license}/*
   **My Github repository ${data.github} can be found here: ${data.link}**
   **You can contact me at: ${data.email}**  
   
