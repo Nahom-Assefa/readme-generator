@@ -6,12 +6,12 @@
    An e-commerce platform both b2b and b2c for the purpose of buying and selling consumer electronics
 
   ## Table Of Contents
-* Installation(#Installation)
-* Usage(#Usage)
-* Contributing(#Contributing)
-* Credits(#Credits)
-* Features(#Features)
-* Additional Information(#Additional Information)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Contributing](#Contributing)
+* [Credits](#Credits)
+* [Features](#Features)
+* [Additional] Information(#Additional Information)
   
   ## Installation
             Did you really expect me to know much about installation? lol
