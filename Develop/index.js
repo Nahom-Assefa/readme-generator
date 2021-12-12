@@ -21,7 +21,7 @@ const questions = [
   "What is the name to your github repository?",
   "What is the link to your github repository?",
   "Does your project contain a lot of features?",
-  "Please list your features here"
+  "Please list your features here",
 ];
 
 // TODO: Create a function to write README file
