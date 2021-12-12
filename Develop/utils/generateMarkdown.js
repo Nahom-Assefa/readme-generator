@@ -58,24 +58,31 @@ function generateMarkdown(data, arr) {
 3) [${arr[2]}](#Contributing)
 4) [${arr[3]}](#Credits)
 5) [${arr[4]}](#Features)
-6) [${arr[5]}](#Additional Information)
+6) [${arr[5]}](#Questions)
   
   ${installations(data.install)}
 
+
   ${screen(data.screenshot)}
+
 
   ${contributing(data.contribution)}
 
+
   ${credits(data.credits)}
+
 
   ${features(data.feature)}
 
 
-  ### Additional Information 
+
+  ### Questions 
+  
 
   *This project is licensed under the ${
     data.license
-  } license. https://choosealicense.com/licenses/${data.license}/
+  } license. **https://choosealicense.com/licenses/${data.license}/**
+
 
 
   **My Github repository ${data.github} can be found here: ${data.link}**
