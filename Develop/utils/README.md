@@ -11,7 +11,7 @@
 * [Contributing](#Contributing)
 * [Credits](#Credits)
 * [Features](#Features)
-* [Additional] Information(#Additional Information)
+* [additionalInformation](#Additional Information)
   
   ## Installation
             Did you really expect me to know much about installation? lol

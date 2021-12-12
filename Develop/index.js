@@ -25,7 +25,7 @@ const questions = [
   "Please list your features here",
 ];
 
-const tableOfContents = ['Installation', 'Usage', 'Contributing', 'Credits', 'Features', 'Additional Information'];
+const tableOfContents = ['Installation', 'Usage', 'Contributing', 'Credits', 'Features', 'additionalInformation'];
 
 // TODO: Create a function to write README file
 
