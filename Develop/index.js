@@ -18,9 +18,10 @@ const questions = [
   "Please list collaborators with a link to their github",
   "Are there any installation specifications to highlight",
   "Describe the installation process",
-  "Please provide a table of contents (check all that apply)",
   "What is the name to your github repository?",
-  "What is the link to your github repository?"
+  "What is the link to your github repository?",
+  "Does your project contain a lot of features?",
+  "Please list your features here"
 ];
 
 // TODO: Create a function to write README file
@@ -148,21 +149,33 @@ function init() {
       },
     },
     {
-      type: "checkbox",
-      name: "tableOfContents",
-      message: questions[12],
-      choices: ["Installation", "Usage", "Credits", "License", "Developers"],
-    },
-    {
         type: "input",
         name: "github",
-        message: questions[13],
+        message: questions[12],
     },
     {
         type: "input",
         name: "link",
-        message: questions[14],
-    }
+        message: questions[13],
+    },
+    {
+      type: "confirm",
+      name: "featureConfirm",
+      message: questions[14],
+      default: false,
+    },
+    {
+      type: "input",
+      name: "feature",
+      message: questions[15],
+      when: ({ featureConfirm }) => {
+        if (featureConfirm) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+    },
   ]);
 }
 

@@ -1,11 +1,11 @@
-const fs = require('fs');
+const fs = require("fs");
 
 function screen(screenshot) {
   if (!screenshot) {
     return "";
   }
   return `## Usage
-          ${screenshot}`;
+  ${screenshot}`;
 }
 
 function credits(credit) {
@@ -25,6 +25,23 @@ function installations(installation) {
   }
 }
 
+function contributing(contribution) {
+  if (!contribution) {
+    return "";
+  } else {
+    return `## Contributing
+    ${contribution}`;
+  }
+}
+
+function features(feature) {
+  if (!feature) {
+    return "";
+  } else {
+    return `## Features
+    ${feature}`;
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -36,41 +53,49 @@ function generateMarkdown(data) {
    ${data.description}
 
   ## Table Of Contents
-  * [${data.tableOfContents[0]}](#installation)
-  * [${data.tableOfContents[1]}](#usage)
-  * [${data.tableOfContents[2]}](#credits)
-  * [${data.tableOfContents[3]}](#license)
-  * [${data.tableOfContents[4]}](#developers)
+  * Installation (#installation)
+  * Usage (#usage)
+  * Credits (#credits)
+  * License (#license)
+  * Developers (#developers)
   
   ${installations(data.install)}
 
   ${screen(data.screenshot)}
 
+  ${contributing(data.contribution)}
+
   ${credits(data.credits)}
+
+  ${features(data.feature)}
 
 
   ## Additional Information 
-  *This project is licensed under the ${data.license} license. https://choosealicense.com/licenses/${data.license}/*
+  *This project is licensed under the ${
+    data.license
+  } license. https://choosealicense.com/licenses/${data.license}/
+
   **My Github repository ${data.github} can be found here: ${data.link}**
+
   **You can contact me at: ${data.email}**  
   
 `;
 }
 
 //Output to create file function
-const writeFile = questionContent => {
+const writeFile = (questionContent) => {
   return new Promise((resolve, reject) => {
-    fs.writeFile('./utils/README.md', questionContent, err => {
+    fs.writeFile("./utils/README.md", questionContent, (err) => {
       if (err) {
         reject(err);
         return;
       }
       resolve({
         ok: true,
-        message: "File created!"
+        message: "File created!",
       });
     });
   });
 };
 
-module.exports = {generateMarkdown, writeFile};
+module.exports = { generateMarkdown, writeFile };
