@@ -2,6 +2,7 @@
 const inquirer = require("inquirer");
 const fs = require('fs');
 const {generateMarkdown, writeFile} = require('./utils/generateMarkdown');
+const { table } = require("console");
 
 
 // TODO: Create an array of questions for user input
@@ -23,6 +24,8 @@ const questions = [
   "Does your project contain a lot of features?",
   "Please list your features here",
 ];
+
+const tableOfContents = ['Installation', 'Usage', 'Contributing', 'Credits', 'Features', 'Additional Information'];
 
 // TODO: Create a function to write README file
 
@@ -182,7 +185,7 @@ function init() {
 // Function call to initialize app
 init()
   .then(questionData => {
-    return generateMarkdown(questionData);
+    return generateMarkdown(questionData, tableOfContents);
   })
   .then(fileResponse => {
     return writeFile(fileResponse)

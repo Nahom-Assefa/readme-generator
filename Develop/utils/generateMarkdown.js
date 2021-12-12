@@ -4,7 +4,7 @@ function screen(screenshot) {
   if (!screenshot) {
     return "";
   }
-  return `## Usage
+  return `### Usage
   ${screenshot}`;
 }
 
@@ -12,8 +12,8 @@ function credits(credit) {
   if (!credit) {
     return "";
   }
-  return `## Credits
-These individual(s): ${credit} collaborated with me on this project`;
+  return `### Credits
+  These individual(s): ${credit} collaborated with me on this project`;
 }
 
 function installations(installation) {
@@ -21,7 +21,7 @@ function installations(installation) {
     return "";
   } else {
     return `## Installation
-            ${installation}`;
+  ${installation}`;
   }
 }
 
@@ -29,8 +29,8 @@ function contributing(contribution) {
   if (!contribution) {
     return "";
   } else {
-    return `## Contributing
-    ${contribution}`;
+    return `### Contributing
+  ${contribution}`;
   }
 }
 
@@ -38,26 +38,27 @@ function features(feature) {
   if (!feature) {
     return "";
   } else {
-    return `## Features
-    ${feature}`;
+    return `### Features
+  ${feature}`;
   }
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
+function generateMarkdown(data, arr) {
   return `# ${data.title}
 
-  ![badge](https://img.shields.io/badge/license-${data.license}-green);
+  ![badge](https://img.shields.io/badge/license-${data.license}-green)
 
   ## Description
-   ${data.description}
+  ${data.description}
 
   ## Table Of Contents
-  * Installation (#installation)
-  * Usage (#usage)
-  * Credits (#credits)
-  * License (#license)
-  * Developers (#developers)
+1) ${arr[0]}(#Installation)
+2) ${arr[1]}(#Usage)
+3) ${arr[2]}(#Contributing)
+4) ${arr[3]}(#Credits)
+5) ${arr[4]}(#Features)
+6) ${arr[5]}(#Additional Information)
   
   ${installations(data.install)}
 
@@ -70,10 +71,12 @@ function generateMarkdown(data) {
   ${features(data.feature)}
 
 
-  ## Additional Information 
+  ### Additional Information 
+
   *This project is licensed under the ${
     data.license
   } license. https://choosealicense.com/licenses/${data.license}/
+
 
   **My Github repository ${data.github} can be found here: ${data.link}**
 
