@@ -53,12 +53,12 @@ function generateMarkdown(data, arr) {
   ${data.description}
 
   ## Table Of Contents
-1) ${arr[0]}(#Installation)
-2) ${arr[1]}(#Usage)
-3) ${arr[2]}(#Contributing)
-4) ${arr[3]}(#Credits)
-5) ${arr[4]}(#Features)
-6) ${arr[5]}(#Additional Information)
+1) [${arr[0]}](#Installation)
+2) [${arr[1]}](#Usage)
+3) [${arr[2]}](#Contributing)
+4) [${arr[3]}](#Credits)
+5) [${arr[4]}](#Features)
+6) [${arr[5]}](#Additional Information)
   
   ${installations(data.install)}
 
